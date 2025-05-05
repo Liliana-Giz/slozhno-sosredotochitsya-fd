@@ -19,6 +19,7 @@
   --subtitle-color: rgba(53, 52, 48, 1);
   --header-title-color: rgba(53, 52, 48, 1);
   --content-title-color: rgba(53, 52, 48, 1);
+  --content-subtitle-color: rgba(53, 52, 48, 1);
   --decorated-zone-color: rgba(53, 52, 48, 1);
   --footer-accent-color: rgba(255, 0, 112, 1);
 }
@@ -44,6 +45,7 @@
     --subtitle-color: rgba(53, 52, 48, 1);
     --header-title-color: rgba(53, 52, 48, 1);
     --content-title-color: rgba(53, 52, 48, 1);
+    --content-subtitle-color: rgba(53, 52, 48, 1);
     --decorated-zone-color: rgba(53, 52, 48, 1);
     --footer-accent-color: rgba(255, 0, 112, 1);
   }

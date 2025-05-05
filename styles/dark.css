@@ -19,6 +19,7 @@
   --header-title-color: #000028;
   --subtitle-color: rgba(255, 0, 112, 1);
   --content-title-color: rgba(255, 0, 112, 1);
+  --content-subtitle-color: rgba(0, 0, 40, 1);
   --decorated-zone-color: rgba(255, 0, 112, 1);
   --footer-accent-color: rgba(255, 0, 112, 1);
 }

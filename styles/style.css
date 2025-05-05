@@ -2,7 +2,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  padding: 3vw 2.7vw;
   background-color: var(--background-color);
   background-image: var(--background-image);
   background-repeat: no-repeat;
@@ -16,7 +15,8 @@
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
   align-items: center;
-  padding-block-end: 3em;
+  padding: 3vw 2.7vw;
+  padding-block-end: 2.7em;
   gap: 5px;
   margin-block-start: 18px;
   min-block-size: 668px;
@@ -29,8 +29,10 @@
   position: absolute;
   font-family: "IBM Plex Mono", sans-serif;
   font-size: 18px;
-  inset-block-start: -18px;
-  inset-inline-end: 27px;
+  /*inset-block-start: -18px;
+  inset-inline-end: 27px;*/
+  top: -8px;
+  right: 37px;
   color: var(--accent-color);
   block-size: 26px;
   inline-size: 33px;
@@ -43,8 +45,8 @@
   background-position: center;
   block-size: 9px;
   inline-size: 9px;
-  inset-block-start: -11px;
-  inset-inline-end: 8px;
+  top: 0px;
+  inset-inline-end: 20px;
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
 }
@@ -56,8 +58,8 @@
   border-top: 1px solid var(--decorated-zone-color);
   border-right: 1px solid var(--decorated-zone-color);
   position: absolute;
-  inset-block-start: -19px;
-  inset-inline-end: 0px;
+  inset-block-start: -8px;
+  inset-inline-end: 10px;
 }
 
 .decorated-zone::after {
@@ -67,8 +69,8 @@
   border-bottom: 1px solid var(--decorated-zone-color);
   border-left: 1px solid var(--decorated-zone-color);
   position: absolute;
-  bottom: 38px;
-  left: 0px;
+  bottom: 28px;
+  left: 10px;
 }
 
 .header__theme-menu {
@@ -127,12 +129,13 @@
   font-weight: 700;
   line-height: 1.3;
   font-size: var(--font-size-text);
+  color: var(--content-subtitle-color);
 }
 
 .header__title {
   color: var(--header-title-color);
   grid-row: 3 / 4;
-  margin-block-start: 8px;
+  margin-block-start: 15px;
 }
 
 .title-decor {
@@ -149,6 +152,7 @@
 
 .content {
   margin-block-start: 0.7em;
+  padding: 3vw 2.7vw 0;
 }
 
 .content__title {
@@ -165,7 +169,7 @@
   line-height: 1.3;
   color: var(--text-color);
   font-size: var(--font-size-text);
-  padding-block-start: 10px;
+  padding-block-start: 10.1px;
 }
 
 .content__link {
@@ -203,8 +207,8 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(1, minmax(min-content, max-content));
-  gap: 10px;
-  margin-block-end: 70px;
+  gap: 10.5px;
+  margin-block-end: 58px;
 }
 
 .gallery__image {
@@ -220,11 +224,8 @@
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
   align-items: center;
-  padding-block-end: 3em;
-  gap: 5px;
-  margin-block-start: 18px;
+  padding-block-end: 2em;
   min-block-size: 668px;
-  block-size: 100vh;
 }
 
 .footer__title {
@@ -233,7 +234,7 @@
 }
 
 @media (width >= 768px) {
-  header {
+  .header {
     align-items: center;
     padding-block-end: 0em;
     gap: 0px;
@@ -242,7 +243,7 @@
   }
 
   .header__theme-menu {
-    padding-block-end: 20px;
+    padding-block-end: 0px;
   }
 
   .header__theme-menu-list {
@@ -250,7 +251,7 @@
   }
 
   .title-accent {
-    margin-block-end: 28px;
+    margin-block-end: 25px;
     margin-inline-start: -20px;
   }
 
@@ -259,29 +260,33 @@
     inline-size: max(50%, 364px);
     align-self: center;
     justify-self: end;
-    margin-block-end: 40px;
+    margin-block-end: 45px;
   }
 
   .header__rec::before {
-    inset-block-start: -20px;
-    inset-inline-end: 27px;
+    inset-block-start: 21px;
+    inset-inline-end: 48px;
   }
 
   .header__rec::after {
-    inset-block-start: -13px;
-    inset-inline-end: 8px;
+    inset-block-start: 27px;
+    inset-inline-end: 28px;
     border-radius: 50%;
     box-shadow: 0 0 4px 2px var(--accent-color);
   }
 
   .decorated-zone::before {
-    inset-block-start: -22px;
-    inset-inline-end: 0px;
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
 
   .decorated-zone::after {
-    bottom: 60px;
-    left: 0px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .content {
+    margin-block-start: 37px;
   }
 
   .content__cards-type-1 {
@@ -307,7 +312,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     grid-auto-flow: dense;
-    margin-block-end: 6.45em;
+    margin-block-end: 60px;
   }
 
   .gallery .title {
@@ -334,18 +339,22 @@
     grid-column: 2 / span 2;
   }
 
+  .footer {
+    block-size: 100vh;
+  }
   .footer__title {
     margin-inline-start: 0;
+    margin-block-end: 0;
+    padding-block-start: 40px;
   }
 }
 
 @media (width >= 1024px) {
-  .page {
-    padding: 20px;
-  }
-
+  
   .header {
     margin-block-start: 0;
+    padding-block: 20px;
+    padding-inline: 20px;
   }
 
   .header__theme-menu {
@@ -361,7 +370,7 @@
 
   .title-accent {
     font-size: var(--font-size-title-accent-other-version);
-    margin-block-start: 0.3em;
+    margin-block-start: 0.2em;
   }
 
   .header__title {
@@ -369,26 +378,24 @@
   }
 
   .header__rec::before {
-    inset-block-start: 0px;
-    inset-inline-end: 27px;
+    inset-block-start: 20px;
+    inset-inline-end: 48px;
   }
 
   .header__rec::after {
-    inset-block-start: 8px;
-    inset-inline-end: 8px;
+    inset-block-start: 28px;
+    inset-inline-end: 28px;
   }
 
   .decorated-zone::before {
-    inset-block-start: 0px;
-    inset-inline-end: 0px;
-  }
-
-  .decorated-zone::after {
-    bottom: 40px;
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
 
   .content {
     margin-block-start: 2.5em;
+    padding-block-start: 20px;
+    padding-inline: 20px;
   }
 
   .content__cards {
@@ -425,10 +432,15 @@
   }
 
   .gallery {
-    margin-block-end: 80px;
+    margin-block-end: 61px;
+  }
+
+  .footer {
+    padding-block: 0 20px;
+    padding-inline: 20px;
   }
 
   .footer__title {
-    padding-block-end: 5px;
+    padding-block-end: 50px;
   }
 }
