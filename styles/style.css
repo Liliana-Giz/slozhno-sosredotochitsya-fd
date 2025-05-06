@@ -15,12 +15,10 @@
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
   align-items: center;
-  padding: 3vw 2.7vw;
-  padding-block-end: 2.7em;
   gap: 5px;
-  margin-block-start: 18px;
-  min-block-size: 668px;
   block-size: 100vh;
+  min-block-size: 668px;
+  padding: 10px;
 }
 
 .header__rec::before {
@@ -29,13 +27,11 @@
   position: absolute;
   font-family: "IBM Plex Mono", sans-serif;
   font-size: 18px;
-  /*inset-block-start: -18px;
-  inset-inline-end: 27px;*/
-  top: -8px;
-  right: 37px;
+  top: 10px;
+  right: 38px;
   color: var(--accent-color);
-  block-size: 26px;
-  inline-size: 33px;
+  max-width: 33px;
+  width: 100%;
 }
 
 .header__rec::after {
@@ -45,8 +41,8 @@
   background-position: center;
   block-size: 9px;
   inline-size: 9px;
-  top: 0px;
-  inset-inline-end: 20px;
+  top: 18px;
+  inset-inline-end: 19px;
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
 }
@@ -58,7 +54,7 @@
   border-top: 1px solid var(--decorated-zone-color);
   border-right: 1px solid var(--decorated-zone-color);
   position: absolute;
-  inset-block-start: -8px;
+  inset-block-start: 10px;
   inset-inline-end: 10px;
 }
 
@@ -69,14 +65,14 @@
   border-bottom: 1px solid var(--decorated-zone-color);
   border-left: 1px solid var(--decorated-zone-color);
   position: absolute;
-  bottom: 28px;
+  bottom: 10px;
   left: 10px;
 }
 
 .header__theme-menu {
   grid-row: 1 / 2;
   align-self: center;
-  padding-block-end: 17px;
+  margin-block-end: -5px;
 }
 
 .header__theme-menu-list {
@@ -124,7 +120,7 @@
   pointer-events: none;
 }
 
-.title {
+.text-element {
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: 700;
   line-height: 1.3;
@@ -135,7 +131,6 @@
 .header__title {
   color: var(--header-title-color);
   grid-row: 3 / 4;
-  margin-block-start: 15px;
 }
 
 .title-decor {
@@ -148,11 +143,12 @@
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   grid-row: 2 / 3;
+  margin-block-start: 5px;
 }
 
 .content {
-  margin-block-start: 0.7em;
-  padding: 3vw 2.7vw 0;
+  margin-block-start: 40px;
+  padding-inline: 10px;
 }
 
 .content__title {
@@ -208,7 +204,7 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(min-content, max-content));
   gap: 10.5px;
-  margin-block-end: 58px;
+  margin-block-end: 39px;
 }
 
 .gallery__image {
@@ -226,24 +222,19 @@
   align-items: center;
   padding-block-end: 2em;
   min-block-size: 668px;
+  block-size: 100vh;
 }
 
 .footer__title {
   text-shadow: 2px 2px 0 var(--footer-accent-color);
   justify-self: center;
+  margin-block-end: -30px;
 }
 
 @media (width >= 768px) {
   .header {
-    align-items: center;
-    padding-block-end: 0em;
+    padding: 20px;
     gap: 0px;
-    margin-block-start: 0px;
-    margin-block-end: 1.2em;
-  }
-
-  .header__theme-menu {
-    padding-block-end: 0px;
   }
 
   .header__theme-menu-list {
@@ -251,16 +242,13 @@
   }
 
   .title-accent {
-    margin-block-end: 25px;
     margin-inline-start: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header__title {
-    margin-block-start: 0px;
     inline-size: max(50%, 364px);
-    align-self: center;
     justify-self: end;
-    margin-block-end: 45px;
   }
 
   .header__rec::before {
@@ -271,8 +259,6 @@
   .header__rec::after {
     inset-block-start: 27px;
     inset-inline-end: 28px;
-    border-radius: 50%;
-    box-shadow: 0 0 4px 2px var(--accent-color);
   }
 
   .decorated-zone::before {
@@ -286,16 +272,17 @@
   }
 
   .content {
-    margin-block-start: 37px;
+    padding-inline: 20px;
+    margin-block-start: 60px;
   }
 
-  .content__cards-type-1 {
+  .content__cards-in-columns {
     display: grid;
     grid-template-columns: max(30%, 236px) minmax(min-content, max-content);
     gap: 21px;
   }
 
-  .content__cards-type-2 .content__title {
+  .content__cards-in-column .content__title {
     width: min-content;
   }
 
@@ -308,14 +295,13 @@
   }
 
   .gallery {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     grid-auto-flow: dense;
     margin-block-end: 60px;
   }
 
-  .gallery .title {
+  .gallery .text-element {
     grid-column: 1 / -1;
     block-size: min-content;
   }
@@ -339,23 +325,13 @@
     grid-column: 2 / span 2;
   }
 
-  .footer {
-    block-size: 100vh;
-  }
   .footer__title {
     margin-inline-start: 0;
-    margin-block-end: 0;
-    padding-block-start: 40px;
+    margin-block-start: 4px;
   }
 }
 
 @media (width >= 1024px) {
-  
-  .header {
-    margin-block-start: 0;
-    padding-block: 20px;
-    padding-inline: 20px;
-  }
 
   .header__theme-menu {
     align-self: start;
@@ -366,15 +342,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1vw;
     justify-self: center;
-  }
-
-  .title-accent {
-    font-size: var(--font-size-title-accent-other-version);
-    margin-block-start: 0.2em;
-  }
-
-  .header__title {
-    margin-block-start: 0.9em;
   }
 
   .header__rec::before {
@@ -392,43 +359,18 @@
     inset-inline-end: 20px;
   }
 
-  .content {
-    margin-block-start: 2.5em;
-    padding-block-start: 20px;
-    padding-inline: 20px;
-  }
-
-  .content__cards {
-    column-gap: 40px;
-  }
-
-  .content__cards-type-2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .content__cards-type-2 .content__title {
-    inline-size: 315px;
-  }
-
-  .content__cards-type-2 .content__cards-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .content__cards-in-columns {
+    grid-template-columns: max(30%, 315px) minmax(min-content, max-content);
     column-gap: 20px;
-    row-gap: 10px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
   }
 
-  .content__cards-type-2 .card {
-    display: flex;
-    flex-direction: column;
+  .content__cards-in-column .content__title {
+    max-width: 315px;
+    width: 100%;
   }
 
-  .content__title {
-    inline-size: 315px;
+  .content__cards-in-column .content__cards-list {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .gallery {
@@ -437,10 +379,9 @@
 
   .footer {
     padding-block: 0 20px;
-    padding-inline: 20px;
   }
 
   .footer__title {
-    padding-block-end: 50px;
+    padding-block-end: 15px;
   }
 }
